@@ -1,0 +1,13 @@
+Package: aWhereAquaCrop
+Type: Package
+Title: Creates Weather Files for Use in AquaCrop Software
+Version: 1.0.0
+Author: Colin Loftin
+Maintainer: Colin Loftin <colinloftin@awhere.com>
+Description: This package utilizes aWhere's API to create text files containing weather data usable by the AquaCrop modeling software.
+Encoding: UTF-8
+LazyData: true
+Depends: data.table,
+         stringi,
+         aWhereAPI
+RoxygenNote: 7.1.1
