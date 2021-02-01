@@ -7,7 +7,7 @@ Maintainer: Colin Loftin <colinloftin@awhere.com>
 Description: This package utilizes aWhere's API to create text files containing weather data usable by the AquaCrop modeling software.
 Encoding: UTF-8
 LazyData: true
-Depends: data.table,
+Imports: data.table,
          stringi,
          aWhereAPI
 RoxygenNote: 7.1.1
