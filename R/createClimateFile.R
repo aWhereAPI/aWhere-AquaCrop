@@ -23,11 +23,11 @@ createClimateFile <- function(latitude, longitude, start_date, end_date, placena
   obs <- aWhereAPI::daily_observed_latlng(latitude, longitude, start_date, end_date)
   ag <- aWhereAPI::agronomic_values_latlng(latitude, longitude, start_date, end_date)
 
-  createTMPFile(obs, placename)
-  createPLUFile(obs, placename)
-  createEToFile(ag, placename)
+  writeLines(createTMPFile(obs, placename), con = paste0(placename, ".TMP"))
+  writeLines(createPLUFile(obs, placename), con = paste0(placename, ".PLU"))
+  writeLines(createEToFile(ag, placename),  con = paste0(placename, ".ETo"))
 
-  writeLines(paste0(placename, " strategy\n",
+  writeLines(paste0(placename, "\n",
                     " 4.0   : AquaCrop Version (January 2012)\n",
                     placename, ".TMP\n",
                     placename, ".ETo\n",
