@@ -16,6 +16,15 @@
 #' @param placename Text string for model location, used in file naming
 createClimateFile <- function(latitude, longitude, start_date, end_date, placename) {
 
+  if(substr(Sys.getenv("OS"),1,7) == "Windows") {
+    # set Windows newline
+    newLine <- "\r"
+  }
+  else {
+    # set non-Windows newline
+    newLine <- "\n"
+  }
+
   if(!exists("awhereEnv75247")) {
     stop("This function needs access to aWhere's API. Please request a token using your key and secret and retry.")
   }
@@ -27,11 +36,11 @@ createClimateFile <- function(latitude, longitude, start_date, end_date, placena
   writeLines(createPLUFile(obs, placename), con = paste0(placename, ".PLU"))
   writeLines(createEToFile(ag, placename),  con = paste0(placename, ".ETo"))
 
-  writeLines(paste0(placename, "\n",
-                    " 4.0   : AquaCrop Version (January 2012)\n",
-                    placename, ".TMP\n",
-                    placename, ".ETo\n",
-                    placename, ".PLU\n",
+  writeLines(paste0(placename, " strategy", newLine,
+                    " 4.0   : AquaCrop Version (January 2012)", newLine,
+                    placename, ".TMP", newLine,
+                    placename, ".ETo", newLine,
+                    placename, ".PLU", newLine,
                     "MaunaLoa.CO2"
                     ), con = paste0(placename, ".CLI"))
 }
