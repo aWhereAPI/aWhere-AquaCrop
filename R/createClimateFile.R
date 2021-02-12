@@ -36,11 +36,11 @@ createClimateFile <- function(latitude, longitude, start_date, end_date, placena
   writeLines(createPLUFile(obs, placename), con = paste0(placename, ".PLU"))
   writeLines(createEToFile(ag, placename),  con = paste0(placename, ".ETo"))
 
-  writeLines(paste0(placename, " strategy", newLine,
+  text = paste0(placename, " strategy", newLine,
                     " 4.0   : AquaCrop Version (January 2012)", newLine,
                     placename, ".TMP", newLine,
                     placename, ".ETo", newLine,
                     placename, ".PLU", newLine,
-                    "MaunaLoa.CO2"
-                    ), con = paste0(placename, ".CLI"))
+                    "MaunaLoa.CO2")
+  writeLines(text, con = paste0(placename, ".CLI"))
 }
