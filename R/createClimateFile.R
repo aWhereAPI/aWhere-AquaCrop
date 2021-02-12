@@ -41,5 +41,6 @@ createClimateFile <- function(latitude, longitude, start_date, end_date, placena
                     placename, ".ETo", newLine,
                     placename, ".PLU", newLine,
                     "MaunaLoa.CO2")
+  print(text)
   writeLines(text, con = paste0(placename, ".CLI"))
 }
