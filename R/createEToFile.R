@@ -5,11 +5,11 @@ createEToFile <- function(dat, placename) {
 
   if(substr(Sys.getenv("OS"),1,7) == "Windows") {
     # set Windows newline
-    newLine <- "\r"
+    newLine <- "\n"
   }
   else {
     # set non-Windows newline
-    newLine <- "\n"
+    newLine <- "\r\n"
   }
 
   dat$pet.amount <- format(round(dat$pet.amount, 1), nsmall = 1)

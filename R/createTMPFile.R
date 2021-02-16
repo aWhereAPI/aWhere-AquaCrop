@@ -5,11 +5,11 @@ createTMPFile <- function(dat, placename) {
 
   if(substr(Sys.getenv("OS"),1,7) == "Windows") {
     # set Windows newline
-    newLine <- "\r"
+    newLine <- "\n"
   }
   else {
     # set non-Windows newline
-    newLine <- "\n"
+    newLine <- "\r\n"
   }
 
   dat$temperatures.max <- format(round(dat$temperatures.max, 1), nsmall = 1)
