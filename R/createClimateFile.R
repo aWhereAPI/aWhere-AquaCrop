@@ -18,7 +18,7 @@ createClimateFile <- function(latitude, longitude, start_date, end_date, placena
 
   if(substr(Sys.getenv("OS"),1,7) == "Windows") {
     # set Windows newline
-    newLine <- "\r\n"
+    newLine <- "\n"
   } else {
     # set non-Windows newline
     newLine <- "\r\n"

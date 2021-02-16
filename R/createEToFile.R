@@ -5,7 +5,7 @@ createEToFile <- function(dat, placename) {
 
   if(substr(Sys.getenv("OS"),1,7) == "Windows") {
     # set Windows newline
-    newLine <- "\r\n"
+    newLine <- "\n"
   }
   else {
     # set non-Windows newline
